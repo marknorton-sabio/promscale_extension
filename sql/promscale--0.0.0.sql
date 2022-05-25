@@ -12,7 +12,7 @@ BEGIN
     WHERE extname='timescaledb';
 
     IF _is_timescaledb_installed THEN
-        SELECT _timescaledb_internal.restart_background_workers();
+        PERFORM _timescaledb_internal.restart_background_workers();
     END IF;
 END;
 $stop_bgw$;
